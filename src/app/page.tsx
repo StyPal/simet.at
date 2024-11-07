@@ -14,13 +14,13 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            Get started by editing{" "}
+            Relax and chill just play{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
+              The Orion Project by StarBuild-Development
             </code>
             .
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>Save it, and go to our <a href={"https://www.youtube.com/@StarBuild-Development"}>YouTube Channel</a></li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
