@@ -1,5 +1,6 @@
 import {Header} from "@/app/components/header";
 import {SocialMediaFooter} from "@/app/components/footer";
+import AudioPlayer from "@/app/components/audioplayer";
 
 export default function Music() {
     return (
@@ -9,7 +10,7 @@ export default function Music() {
             <Header/>
 
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                MUSIC
+                <AudioPlayer src="/music/Orion.wav" />
             </main>
 
             <SocialMediaFooter/>
