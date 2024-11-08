@@ -81,7 +81,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
 
             {/* Display project name */}
             {projectName && (
-                <div className="text-center text-green-500 mb-4">
+                <div className="text-center text-blue mb-4">
                     <label>{projectName}</label>
                 </div>
             )}
