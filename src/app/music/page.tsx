@@ -10,7 +10,7 @@ export default function Music() {
             <Header/>
 
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <AudioPlayer src="a" />
+                <AudioPlayer src="/music/orion/Orion.wav" />
             </main>
 
             <SocialMediaFooter/>
