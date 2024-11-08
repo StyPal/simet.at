@@ -30,7 +30,7 @@ export function SocialMediaFooter(){
                     alt="Discord icon"
                     width={16}
                     height={16}
-                    className="invert-svg"
+                    className="dark:invert-0 invert"
                 />
                 Discord
             </a>
@@ -46,7 +46,7 @@ export function SocialMediaFooter(){
                     alt="Instagram icon"
                     width={16}
                     height={16}
-                    className="invert-svg"
+                    className="dark:invert-0 invert"
                 />
                 Instagram
             </a>
