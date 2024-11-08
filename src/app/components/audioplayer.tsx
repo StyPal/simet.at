@@ -3,6 +3,7 @@
 "use client";
 
 import {useState, useRef} from 'react';
+import Image from "next/image";
 
 interface AudioPlayerProps {
     src: string; // The audio file source URL
@@ -13,6 +14,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({src}) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [isMuted, setIsMuted] = useState(false);
 
     const handlePlayPause = () => {
         if (audioRef.current) {
@@ -22,6 +24,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({src}) => {
                 audioRef.current.play();
             }
             setIsPlaying(!isPlaying);
+        }
+    };
+
+    const handleMute = () => {
+        if (audioRef.current) {
+            audioRef.current.muted = !isMuted;
+            setIsMuted(!isMuted);
         }
     };
 
@@ -37,15 +46,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({src}) => {
         }
     };
 
-    const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (audioRef.current) {
-            audioRef.current.currentTime = Number(e.target.value);
-            setCurrentTime(Number(e.target.value));
-        }
-    };
-
     return (
-        <div>
+        <div className="relative flex justify-between items-center">
             <audio
                 ref={audioRef}
                 src={src}
@@ -53,29 +55,47 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({src}) => {
                 onLoadedMetadata={handleLoadedMetadata}
                 onEnded={() => setIsPlaying(false)}
             />
-            <div>
-                <button onClick={handlePlayPause}>
-                    {isPlaying ? 'Pause' : 'Play'}
-                </button>
-                <input
-                    type="range"
-                    min="0"
-                    max={duration}
-                    step="0.1"
-                    value={currentTime}
-                    onChange={handleSeek}
-                />
-                <span>
-          {convertTime(currentTime)} / {convertTime(duration)}
-        </span>
-            </div>
+            <button
+                onClick={handlePlayPause}
+                className="w-full mx-2"
+            >
+                <Image
+                    src={isPlaying ? "/music/pause-button.svg" : "/music/play-button.svg"}
+                    alt={isPlaying ? "pause" : "play"}
+                    height="16" width="16"
+                    className="dark:invert"/>
+            </button>
+            <code>{convertTime(currentTime)}</code>
+            <input
+                type="range"
+                min="0"
+                max={duration}
+                step="0.1"
+                value={currentTime}
+                onChange={(e) => {
+                    if (audioRef.current) {
+                        audioRef.current.currentTime = parseFloat(e.target.value);
+                    }
+                    setCurrentTime(parseFloat(e.target.value));
+                }}
+                className="accent-red mx-2"
+            />
+
+            <code>{convertTime(duration)}</code>
+            <button onClick={handleMute} className="w-full mx-2">
+                <Image
+                    src={isMuted ? "/music/audio-off.svg" : "/music/audio-high.svg"}
+                    alt={isMuted ? "unmute" : "mute"}
+                    height="16" width="16"
+                    className="dark:invert"/>
+            </button>
         </div>
     );
 
     function convertTime(totalSeconds: number): string {
         let seconds = Math.floor(totalSeconds % 60);
         let minutes = Math.floor(totalSeconds / 60);
-        return `${minutes}:${seconds}`;
+        return seconds < 10 ? `${minutes}:0${seconds}` : `${minutes}:${seconds}`;
     }
 };
 
