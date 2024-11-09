@@ -118,7 +118,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
                         }
                         setCurrentTime(parseFloat(e.target.value));
                     }}
-                    className="accent-red mx-2 cursor-pointer"
+                    className="accent-red mx-2 cursor-pointer max-w-32 sm:max-w-xl"
                 />
                 <label className="font-mono">{convertTime(duration)}</label>
                 <button onClick={handleMute} className="w-full mx-2">

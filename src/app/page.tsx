@@ -18,7 +18,9 @@ export default function Home() {
                 >
                     <Image src="/8thNote.png" alt="" width={16}
                            height={16} className="invert-svg"/>
-                    Go to Music →
+                    <label>
+                        Go to Music →
+                    </label>
                 </Link>
             </main>
 
