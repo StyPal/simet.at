@@ -57,7 +57,8 @@ export default function Music() {
                         />
                     ))}
                 </ul>
-                <AudioPlayer src={selectedTrack} />
+                {/* Ensure that AudioPlayer resets by using a key tied to the selected track */}
+                <AudioPlayer key={selectedTrack} src={selectedTrack} />
             </main>
 
             <SocialMediaFooter/>

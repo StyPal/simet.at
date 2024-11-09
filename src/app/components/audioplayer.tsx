@@ -70,18 +70,18 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center border-2 rounded-xl p-6 border-foreground bg-gray">
             {/* Display error if any */}
             {error && <div className="text-center text-red">{error}</div>}
 
             {/* Display audio name */}
-            <div id="audioInfo" className="text-center mb-4">
+            <div id="audioInfo" className="text-center mb-4 text-foreground text-lg font-bold">
                 <label>{audioRef.current ? getAudioFileName(src) : ""}</label>
             </div>
 
             {/* Display project name */}
             {projectName && (
-                <div className="text-center text-blue mb-4">
+                <div className="text-center mb-4">
                     <label>{projectName}</label>
                 </div>
             )}
@@ -100,12 +100,12 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
                     <Image
                         src={isPlaying ? "/music/pause-button.svg" : "/music/play-button.svg"}
                         alt={isPlaying ? "pause" : "play"}
-                        height="16"
-                        width="16"
+                        height="20"
+                        width="20"
                         className="dark:invert"
                     />
                 </button>
-                <code>{convertTime(currentTime)}</code>
+                <label className="font-mono">{convertTime(currentTime)}</label>
                 <input
                     type="range"
                     min="0"
@@ -118,15 +118,15 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
                         }
                         setCurrentTime(parseFloat(e.target.value));
                     }}
-                    className="accent-red mx-2"
+                    className="accent-red mx-2 cursor-pointer"
                 />
-                <code>{convertTime(duration)}</code>
+                <label className="font-mono">{convertTime(duration)}</label>
                 <button onClick={handleMute} className="w-full mx-2">
                     <Image
                         src={isMuted ? "/music/audio-off.svg" : "/music/audio-high.svg"}
                         alt={isMuted ? "unmute" : "mute"}
-                        height="16"
-                        width="16"
+                        height="25"
+                        width="25"
                         className="dark:invert"
                     />
                 </button>
