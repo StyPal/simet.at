@@ -1,10 +1,11 @@
 "use client";
 
-import { Header } from "@/app/components/header";
-import { SocialMediaFooter } from "@/app/components/footer";
+import {Header} from "@/app/components/header";
+import {SocialMediaFooter} from "@/app/components/footer";
 import AudioPlayer from "@/app/components/audioplayer";
 import AudioTrackItem from "@/app/components/trackListItem";
-import { useState, useEffect } from "react";
+import GoBackButton from "@/app/components/homeButton";
+import {useState, useEffect} from "react";
 
 // List of audio files
 const audioFiles = [
@@ -16,11 +17,10 @@ const audioFiles = [
 ];
 
 export default function Music() {
-    const [selectedTrack, setSelectedTrack] = useState(audioFiles[0]); // Default to the first track
-    const [durations, setDurations] = useState<{ [key: string]: string }>({}); // Store durations for each audio file
+    const [selectedTrack, setSelectedTrack] = useState(audioFiles[0]);
+    const [durations, setDurations] = useState<{ [key: string]: string }>({});
 
     useEffect(() => {
-        // Load each audio file and store its duration
         audioFiles.forEach((file) => {
             const audio = new Audio(file);
             audio.addEventListener("loadedmetadata", () => {
@@ -32,7 +32,6 @@ export default function Music() {
         });
     }, []);
 
-    // Helper function to format duration in mm:ss
     const formatDuration = (seconds: number) => {
         const minutes = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
@@ -57,8 +56,7 @@ export default function Music() {
                         />
                     ))}
                 </ul>
-                {/* Ensure that AudioPlayer resets by using a key tied to the selected track */}
-                <AudioPlayer key={selectedTrack} src={selectedTrack} />
+                <AudioPlayer key={selectedTrack} src={selectedTrack}/>
             </main>
 
             <SocialMediaFooter/>

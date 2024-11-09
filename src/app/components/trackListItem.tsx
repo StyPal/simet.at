@@ -12,7 +12,7 @@ const AudioTrackItem: React.FC<AudioTrackItemProps> = ({ file, isSelected, durat
     return (
         <li
             className={`flex justify-between items-center w-full mb-4 p-2 cursor-pointer rounded text-background ${
-                isSelected ? ' bg-gray-light dark:bg-gray-dark font-bold' : 'bg-gray dark:bg-gray'
+                isSelected ? ' bg-gray-light font-bold' : 'bg-gray'
             }`}
             onClick={onSelect}
         >

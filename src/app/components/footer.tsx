@@ -13,26 +13,26 @@ export function SocialMediaFooter(){
                     aria-hidden
                     src="/social-media/letterboxd.svg"
                     alt="Letterboxd icon"
-                    width={16}
-                    height={16}
+                    width={20}
+                    height={20}
                 />
                 Letterboxd
             </a>
             <a
                 className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-blue"
-                href="https://discordapp.com/users/325606075887910913"
+                href="https://musescore.com/user/31276892"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 <Image
                     aria-hidden
-                    src="/social-media/discord.svg"
+                    src="/social-media/musescore.svg"
                     alt="Discord icon"
-                    width={16}
-                    height={16}
+                    width={32}
+                    height={32}
                     className="dark:invert-0 invert"
                 />
-                Discord
+                MuseScore
             </a>
             <a
                 className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-red"
@@ -44,8 +44,8 @@ export function SocialMediaFooter(){
                     aria-hidden
                     src="/social-media/instagram.svg"
                     alt="Instagram icon"
-                    width={16}
-                    height={16}
+                    width={20}
+                    height={20}
                     className="dark:invert-0 invert"
                 />
                 Instagram
