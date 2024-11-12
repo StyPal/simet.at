@@ -13,7 +13,9 @@ const KofiWidget = () => {
             const textColor = rootStyles.getPropertyValue("--white").trim();
 
             // Set up the Ko-fi widget with the latest theme colors
+            // @ts-ignore
             if (window.kofiWidgetOverlay) {
+                // @ts-ignore
                 window.kofiWidgetOverlay.draw('simetmoritz', {
                     type: 'floating-chat',
                     'floating-chat.donateButton.text': 'Tip Me',
