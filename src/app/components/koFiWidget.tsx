@@ -2,6 +2,12 @@
 
 import { useEffect } from 'react';
 
+declare global {
+    interface Window {
+        kofiWidgetOverlay?: any;
+    }
+}
+
 const KofiWidget = () => {
     useEffect(() => {
         // Function to update the Ko-fi widget with appropriate colors
@@ -13,9 +19,7 @@ const KofiWidget = () => {
             const textColor = rootStyles.getPropertyValue("--white").trim();
 
             // Set up the Ko-fi widget with the latest theme colors
-            // @ts-ignore
-            if (window.kofiWidgetOverlay) {
-                // @ts-ignore
+            if (typeof window !== 'undefined' && window.kofiWidgetOverlay) {
                 window.kofiWidgetOverlay.draw('simetmoritz', {
                     type: 'floating-chat',
                     'floating-chat.donateButton.text': 'Tip Me',
