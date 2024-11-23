@@ -22,7 +22,7 @@ export default function GermanPage() {
                     <div className="bg-gray-light p-4 rounded-lg shadow-xl">
                         <h2 className="text-lg font-bold">Diplomarbeit</h2>
                         <ul className="list-disc ml-4">
-                            <li>Erstellung von 17 Tiermodellen und 4 Kameramodellen (bereits abgeschlossen).</li>
+                            <li>Erstellung von 3D-Assets in Blockbench.</li>
                             <li>Grundlegende Animationen und UV-Mapping für kleinere Modelle mit HDRP-Shadern.</li>
                             <li>Implementierung von Interaktionen zwischen Tieren und Objekten.</li>
                             <li>Sounddesign: SFX, Ambient-Sounds und Musikkomposition.</li>
@@ -30,7 +30,7 @@ export default function GermanPage() {
                         </ul>
                     </div>
                     <div className="bg-gray-light p-4 rounded-lg shadow-xl">
-                        <h2 className="text-lg font-bold">Bewegungs- und Verhaltensimplementierung</h2>
+                        <h2 className="text-lg font-bold">Bewegungs- und Verhaltensimplementierung für meine DA</h2>
                         <p>
                             Eine Ente bewegt sich entlang einer kubischen Bézier-Kurve, die unendlich wirkt und kontinuierlich generiert wird.
                             Weitere Bewegungsmuster für ein Unity-GameObject nutzen Bézier-Kurven mit bis zu 3 Ankerpunkten und variierenden
