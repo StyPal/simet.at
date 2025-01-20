@@ -12,14 +12,14 @@ export default function GermanPage() {
             <main className="flex flex-col sm:flex-row gap-8 row-start-2 items-start w-full sm:w-1/2">
                 <ImageCarousel />
                 <div className="flex flex-col gap-4 w-full sm:w-1/2 text-background">
-                    <div className="bg-gray-light p-4 rounded-lg shadow-xl">
+                    <div className="bg-gray p-4 rounded-lg shadow-xl">
                         <h2 className="text-lg font-bold">Über mich</h2>
                         <p>
                             Ich bin Programmierer mit Erfahrung in Java, Kotlin, C#, React, TypeScript und Next.js. Ich spiele (und komponiere am) Klavier
                             und komme aus Österreich. Derzeit besuche ich eine HTL für Informatik.
                         </p>
                     </div>
-                    <div className="bg-gray-light p-4 rounded-lg shadow-xl">
+                    <div className="bg-gray p-4 rounded-lg shadow-xl">
                         <h2 className="text-lg font-bold">Diplomarbeit</h2>
                         <ul className="list-disc ml-4">
                             <li>Erstellung von 3D-Assets in Blockbench.</li>
@@ -29,7 +29,7 @@ export default function GermanPage() {
                             <li>Raumdesign: Umsetzung in Unity mit ProBuilder.</li>
                         </ul>
                     </div>
-                    <div className="bg-gray-light p-4 rounded-lg shadow-xl">
+                    <div className="bg-gray p-4 rounded-lg shadow-xl">
                         <h2 className="text-lg font-bold">Bewegungs- und Verhaltensimplementierung für meine DA</h2>
                         <p>
                             Eine Ente bewegt sich entlang einer kubischen Bézier-Kurve, die unendlich wirkt und kontinuierlich generiert wird.

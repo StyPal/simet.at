@@ -7,11 +7,12 @@ export function Header() {
                 MoGame11
             </p>
 
-            <Link className="font-bold text-2xl sm:text-3xl leading-tight text-blue text-center flex-none"
-                  href="/">
-                MORITZ SIMET
-            </Link>
-
+            <h1>
+                <Link className="font-bold text-2xl sm:text-3xl leading-tight text-blue text-center flex-none"
+                      href="/">
+                    MORITZ SIMET
+                </Link>
+            </h1>
             <p className="text-xs sm:text-lg leading-tight text-red flex-1 text-center sm:text-right">
                 StyPal
             </p>
